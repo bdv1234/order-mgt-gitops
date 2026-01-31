@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: order-app
+  template:
+    metadata:
+      labels:
+        app: order-app
+    spec:
+      containers:
+      - name: order-app
+        image: yourdockerhub/order-app:REPLACED_BY_CI
+        env:
+        - name: DATABASE_URL
+          value: mysql+pymysql://order_user:order_pass@mysql:3309/orders
+        ports:
+        - containerPort: 8000
