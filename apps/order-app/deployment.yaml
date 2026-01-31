@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: order-app
-        image: bdv1234/order-app:1d0005f9ec879cb3bdf5e930b8ce6a1e14414576
+        image: bdv1234/order-app:6430767648bcdcb85c2d66ba70ec1b30193e9dc9
         env:
         - name: DATABASE_URL
           value: mysql+pymysql://order_user:order_pass@mysql:3309/orders
