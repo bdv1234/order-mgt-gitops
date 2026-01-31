@@ -26,6 +26,14 @@ spec:
           value: order_pass
         ports:
         - containerPort: 3309
+        readinessProbe:
+          exec:
+            command:
+            - sh
+            - -c
+            - mysql -h localhost -P 3309 -u root -prootpass -e 'SELECT 1'
+          initialDelaySeconds: 30
+          periodSeconds: 10
 
 ---
 
