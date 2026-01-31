@@ -15,6 +15,8 @@ spec:
       containers:
       - name: mysql
         image: mysql:8.0
+        args:
+        - "--port=3309"
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: rootpass
@@ -31,7 +33,7 @@ spec:
             command:
             - sh
             - -c
-            - mysql -h localhost -P 3309 -u root -prootpass -e 'SELECT 1'
+            - mysqladmin ping -h localhost -P 3309 -u root -prootpass
           initialDelaySeconds: 30
           periodSeconds: 10
 
