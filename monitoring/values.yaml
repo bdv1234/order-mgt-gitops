@@ -1,0 +1,9 @@
+grafana:
+  enabled: true
+  adminPassword: admin
+  service:
+    type: NodePort
+
+prometheus:
+  service:
+    type: NodePort
