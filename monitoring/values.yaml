@@ -7,3 +7,8 @@ grafana:
 prometheus:
   service:
     type: NodePort
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
+
+crds:
+  enabled: false
